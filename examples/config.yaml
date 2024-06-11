@@ -1,12 +1,12 @@
 global:
-  #api_key: some_really_long_api_key_from_a_service_account
-  #tenant_url: https://my-tenant.sentinelone.net
+  api_key: my_service_user_api_key
+  tenant_url: https://my-tenant.sentinelone.net
   log_level: trace
 command:
   provision:
     account:
-      csv_separator: "|"
-      csv_source: ./examples/accounts.csv
+      csv_separator: tab
+      csv_source: ./examples/accounts.tsv
       reactivate_expired_account: true
       reset_first_user_password: false
   version:

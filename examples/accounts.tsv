@@ -1,0 +1,6 @@
+account_name	account_type	expires	external_id	bundle	total_agents	modules	first_name	last_name	email_address	role
+Acme Labs Test (001)	Trial	2h	Acme Labs	complete	10	rso,remote_ops_forensics,vulnerability_management,purple_ai,ranger	Josh	Hogle	josh@acmelabs.dev	Admin
+Acme Labs Test (002)	Trial	2h	Acme Labs	complete	5	rso,remote_ops_forensics,vulnerability_management,purple_ai,ranger	Wiley	Coyote	wiley@acmelabs.dev	Admin
+Acme Labs Test (003)	Trial	2h	Acme Labs	complete	25	rso,remote_ops_forensics,vulnerability_management,purple_ai,ranger	Elmer	Fudd	elmer@acmelabs.dev	Admin
+Acme Labs Test (004)	Trial	2h	Acme Labs	complete	15	rso,remote_ops_forensics,vulnerability_management,purple_ai,ranger	Bugs	Bunny	bugs@acmelabs.dev	Admin
+Acme Labs Test (005)	Trial	2h	Acme Labs	complete	100	rso,remote_ops_forensics,vulnerability_management,purple_ai,ranger	Marvin	Martian	marvin@acmelabs.dev	Admin

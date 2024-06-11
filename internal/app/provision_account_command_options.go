@@ -116,6 +116,11 @@ func (c *provisionAccountCommandOptions) Load() errorx.Error {
 				_DefaultCSVSeparator)
 		}
 
+		// special TAB case
+		if strings.EqualFold(viperConfig.CSVSeparator, "tab") {
+			viperConfig.CSVSeparator = "\t"
+		}
+
 		// CSV separator should be a single character
 		if len(viperConfig.CSVSeparator) != 1 {
 			errx := errors.NewConfigValidateFailure(c.appState.config.globalOptions.ConfigFile, "csv_separator",
