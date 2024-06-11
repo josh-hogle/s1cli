@@ -1,0 +1,68 @@
+snapshot:
+  name_template: "{{ .Tag }}-SNAPSHOT"
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: s1cli-linux-amd64-dev
+    main: ./cmd/s1cli
+    binary: s1cli
+    ldflags:
+      - -X go.joshhogle.dev/s1cli/internal/build.IsDevelopment=true
+      - -X go.joshhogle.dev/s1cli/internal/build.Version={{ .Version }}
+      - -X go.joshhogle.dev/s1cli/internal/build.Commit={{ .FullCommit }}
+      - -X go.joshhogle.dev/s1cli/internal/build.CodeName=LondonBridge
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - amd64
+    mod_timestamp: "{{ .CommitTimestamp }}"
+  - id: s1cli-linux-arm64-dev
+    main: ./cmd/s1cli
+    binary: s1cli
+    ldflags:
+      - -X go.joshhogle.dev/s1cli/internal/build.IsDevelopment=true
+      - -X go.joshhogle.dev/s1cli/internal/build.Version={{ .Version }}
+      - -X go.joshhogle.dev/s1cli/internal/build.Commit={{ .FullCommit }}
+      - -X go.joshhogle.dev/s1cli/internal/build.CodeName=LondonBridge
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - arm64
+    mod_timestamp: "{{ .CommitTimestamp }}"
+  - id: s1cli-darwin-amd64-dev
+    main: ./cmd/s1cli
+    binary: s1cli
+    ldflags:
+      - -X go.joshhogle.dev/s1cli/internal/build.IsDevelopment=true
+      - -X go.joshhogle.dev/s1cli/internal/build.Version={{ .Version }}
+      - -X go.joshhogle.dev/s1cli/internal/build.Commit={{ .FullCommit }}
+      - -X go.joshhogle.dev/s1cli/internal/build.CodeName=LondonBridge
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    goarch:
+      - amd64
+    mod_timestamp: "{{ .CommitTimestamp }}"
+  - id: s1cli-darwin-arm64-dev
+    main: ./cmd/s1cli
+    binary: s1cli
+    ldflags:
+      - -X go.joshhogle.dev/s1cli/internal/build.IsDevelopment=true
+      - -X go.joshhogle.dev/s1cli/internal/build.Version={{ .Version }}
+      - -X go.joshhogle.dev/s1cli/internal/build.Commit={{ .FullCommit }}
+      - -X go.joshhogle.dev/s1cli/internal/build.CodeName=LondonBridge
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    goarch:
+      - arm64
+    mod_timestamp: "{{ .CommitTimestamp }}"
