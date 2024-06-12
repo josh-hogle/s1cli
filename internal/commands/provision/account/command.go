@@ -144,6 +144,9 @@ func (c *Command) provisionAccount(account accountDetails, reactivate, resetFirs
 		EmailAddress: account.EmailAddress,
 		Role:         account.Role,
 	}, acct.ID)
+	if errx != nil {
+		return errx
+	}
 	logger = logger.With().Str("user_id", user.ID).Str("email_address", user.EmailAddress).Logger()
 	logger.Info().Msg("user has been created and enabled for account")
 
