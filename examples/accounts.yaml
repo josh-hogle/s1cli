@@ -1,0 +1,79 @@
+defaults:
+  accountType: trial
+  billingMode: subscription
+  expiration: "2024-08-01T00:00:00Z"
+  inheritGlobalPolicy: true
+  licenses:
+    bundles:
+      name: complete
+      totalAgents: 100
+    modules:
+      - rogues
+      - rso
+      - ranger
+      - vulnerability_management
+    settings:
+      dv_retention: 90 Days
+      malicious_data_retention: 365 days
+      remote_shell_availability: enabled
+      marketplace_access_status: available
+      account_level_ranger: account
+  unlimitedExpiration: false
+  usageType: customer
+accounts:
+  - name: Test Account (001)
+    externalID: Acme Labs, Ltd.
+    sites:
+      - name: Test Site
+        
+    users:
+      - name: Josh Hogle
+        email_address: josh@joshhogle.com
+        role: Admin
+  - name: Test Account (002)
+    accountType: triAL
+    expiration: 24h
+    externalID: Acme Labs, Ltd.
+  - name: Test Account (003)
+    expiration: "2024-07-01T00:00:00Z"
+    externalID: Some external ID
+    inheritGlobalPolicy: false
+    policy:
+      agentLoggingOn: true
+      agentUI:
+        agentUIOn: true
+        contactCompany: Acme Labs, Ltd.
+        contactDirectMessage: some message
+        contactEmail: support@acmelabs.dev
+        contactFreeText: Please contact support if you have issues
+        contactOther: N/A
+        contactPhoneNumber: 123-456-7890
+        contactSupportWebsite: https://support.acmelabs.dev
+        devicePopUpNotifications: true
+        maxEventAgeDays: 14
+        showAgentWarnings: true
+        showDeviceTab: true
+        showQuarantineTab: true
+        showSupport: true
+        showSuspicious: true
+        threatPopUpNotifications: true
+      allowRemoteShell: true
+      antiTamperingOn: true
+      autoDecommissionDays: 30
+      autoDecommissionOn: true
+      autoFileUpload:
+        enabled: true
+        includeBenignFiles: false
+        maxDailyFileUpload: 1000
+        maxDailyFileUploadLimit: 1000
+        maxFileSize: 25
+        maxFileSizeLimit: 25
+        maxLocalDiskUsage: 1000
+        maxLocalDiskUsageLimit: 1000
+      autoImmuneOn: true
+      autoMitigationAction: quarantine
+      cloudValidationOn: true
+      driverBlocking: true
+      dvAttributesPerEventType:
+
+

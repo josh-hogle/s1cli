@@ -541,20 +541,6 @@ func (s *S1Client) fromS1APIUserObject(o S1APIUserObject) (*S1User, errorx.Error
 	return user, nil
 }
 
-/*
-// formatAccountName replaces all placeholders in the account name format and returns the result.
-func (s *S1ClientService) formatAccountName(req *ProvisioningRequest) string {
-	// TODO: this can be greatly improved using regexp
-	name := strings.ReplaceAll(s.accountNameFormat, "{request_id}", req.RequestID)
-	name = strings.ReplaceAll(name, "{workshop_id}", req.WorkshopID)
-	name = strings.ReplaceAll(name, "{first_name}", req.FirstName)
-	name = strings.ReplaceAll(name, "{last_name}", req.LastName)
-	name = strings.ReplaceAll(name, "{company}", req.Company)
-	name = strings.ReplaceAll(name, "{title}", req.Title)
-	return strings.ReplaceAll(name, "{address}", req.EmailAddress)
-}
-*/
-
 // s1ClientExecOptFn is used to pass optional settings to the exec() call.
 type s1ClientExecOptFn func(*resty.Request) *resty.Request
 

@@ -5,10 +5,9 @@ global:
 command:
   provision:
     account:
-      csv_separator: tab
-      csv_source: ./examples/accounts.tsv
+      source: ./examples/accounts.yaml
       reactivate_expired_account: true
-      reset_first_user_password: false
+      
   version:
     short: false
     verbose: true
